@@ -15,14 +15,3 @@ test("gold: unit test the binary search function which returns the closest value
     t.is(gold.getClosestAge(mockArr,207).closestAge,122);
     t.is(gold.getClosestAge(mockArr,0).closestAge,1);
 });
-
-
-// let index = 0;
-// console.log(binarySearch([1, 23, 45, 67, 94, 122], 96,index))  //=> 94
-// console.log(index);
-// console.log(binarySearch([1, 23, 45, 67, 94, 122], 47,index))  //=> 45
-// console.log(index);
-// console.log(binarySearch([1, 23, 45, 67, 94, 122], 207,index)) //=> 122
-// console.log(index);
-// console.log(binarySearch([1, 23, 45, 67, 94, 122], 0,index))   //=> 1
-// console.log(index);
