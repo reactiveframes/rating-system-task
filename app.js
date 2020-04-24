@@ -8,8 +8,8 @@ const createError = require('http-errors'),
     redis = require(`./lib/orm/redis`),
     app = express();
 
+console.log("Server started, listening on port: "+process.env.PORT);
 
-// app.listen(process.env.PORT || 3000);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));

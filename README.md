@@ -45,4 +45,4 @@ finally , npm run test to which will run
 
 - initialize the redis cache with the structured data, stored in lib/init_data
 - on any api request (e.g. Once a client sends a installedApp request), update redis and the in-memory cache to respond faster to the api request and to eliminate n (requests) redis reads.
-- Server will listen to all existing endpoints..
+- serves all existing endpoints.
