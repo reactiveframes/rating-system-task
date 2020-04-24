@@ -36,10 +36,10 @@ or from terminal
 - npm i
 - npm run start
  
-finally , npm run test to which will run
-- unit tests
-- api tests
-- integration test
+- npm run test (to view the full test coverage)
+    - unit tests
+    - api tests
+    - integration test
 
 # Server lifecycle
 
