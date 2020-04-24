@@ -58,8 +58,7 @@ or from terminal
     - integration test
 
 # Usage
-After running the server..
-You can send/test requests by either clicking on the following links or via postman for example:
+After running the server, you can send/test requests by either clicking on the following links or via postman for example:
 
 - GET
     - http://127.0.0.1:3000/appService/relevantApplication?age=29&category=social&customerType=bronze
