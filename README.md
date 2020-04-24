@@ -31,7 +31,7 @@ The data is also stored in memory as well as in redis for faster responses and t
 
 # Adding a new customer type
 Must implement getApps(res,age)
-this module will implicitly load that type and will be available @ the /appService/relevantApplication endpoint
+this module will be implicitly loaded at runtime and will be available @ the /appService/relevantApplication endpoint
 The new customerType js file must exist in the following path:
 lib/rankings/customer_types
 
