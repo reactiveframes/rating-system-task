@@ -1,7 +1,8 @@
 require('dotenv').config();
-let redis = require('../lib/orm/redis');
+const redis = require('../lib/orm/redis');
 delete process.env.SERVER_UNDER_UNIT_TEST;
-let server = require('./../app');
+const server = require('./../app');
+
 
 
 module.exports = {

@@ -1,12 +1,9 @@
 import test from 'ava';
-let {timeout,appDetails,app} = require('../baseApiTest');
+const {timeout,appDetails,app} = require('../baseApiTest');
 
-let chai = require('chai');
-let chaiHttp = require("chai-http");
+const chai = require('chai');
+const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
-
-
-
 
 test("endpoint: appService/relevantApplication with category bronze", async t => {
     t.timeout(timeout);
@@ -22,6 +19,9 @@ test("endpoint: appService/relevantApplication with category bronze", async t =>
         })
         .then(res => {
             assertBusinessLogic(res, t);
+        })
+        .catch(err =>{
+            console.error(err);
         })
 
 });
@@ -44,6 +44,9 @@ test("endpoint: appService/relevantApplication with category silver", async t =>
         .then(res=>{
             assertBusinessLogic(res, t);
         })
+        .catch(err =>{
+            console.error(err);
+        })
 
 });
 
@@ -63,6 +66,9 @@ test("endpoint: appService/relevantApplication with category gold", async t => {
         })
         .then(res=>{
             assertBusinessLogic(res, t);
+        })
+        .catch(err =>{
+            console.error(err);
         })
 
 });

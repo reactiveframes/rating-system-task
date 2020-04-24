@@ -1,14 +1,11 @@
 import test from 'ava';
 
-let {timeout, appDetails, app} = require('../baseApiTest');
-
-
-let chai = require('chai');
-let chaiHttp = require("chai-http");
+const {timeout, appDetails, app} = require('../baseApiTest');
+const chai = require('chai');
+const chaiHttp = require("chai-http");
 chai.use(chaiHttp);
 
-
-let clientsInstallations = [
+const clientsInstallations = [
     {age: 25, installedApp: "facebook"},
     {age: 26, installedApp: "facebook"},
     {age: 26, installedApp: "facebook"},
@@ -42,7 +39,7 @@ let clientsInstallations = [
 ];
 
 
-let relevantAppRequest = {
+const relevantAppRequest = {
     age: 26,
     category: "social",
     customerType: "gold"
@@ -57,13 +54,13 @@ let relevantAppRequest = {
 test("integration: multiple clients install apps and get different ratings", async t => {
     t.timeout(timeout);
 
-    let requester = chai.request(app).keepOpen();
+    const requester = chai.request(app).keepOpen();
 
-    let requests = clientsInstallations.map(req => {
+    const requests = clientsInstallations.map(req => {
         return requester.post(`/appService/installedApps?age=${req.age}&installedApp=${req.installedApp}`)
     });
 
-    let req = requester.get(`/appService/relevantApplication?age=${relevantAppRequest.age}&category=${relevantAppRequest.category}&customerType=${relevantAppRequest.customerType}`)
+    const req = requester.get(`/appService/relevantApplication?age=${relevantAppRequest.age}&category=${relevantAppRequest.category}&customerType=${relevantAppRequest.customerType}`)
 
     await Promise.all(requests)
         .then(responses => {
@@ -71,13 +68,16 @@ test("integration: multiple clients install apps and get different ratings", asy
         })
         .then(res => Promise.resolve(req))
         .then(res => {
-            let appsResult = res.body;
+            const appsResult = res.body;
             console.log("integration result: "+appsResult);
             t.assert(appsResult.indexOf("facebook") > -1);
             t.assert(appsResult.indexOf("whatsup") > -1);
         })
         .then(res => requester.close())
-        .then(res => t.assert(true));
+        .then(res => t.assert(true))
+        .catch(err =>{
+            console.error(err);
+        })
 
 });
 

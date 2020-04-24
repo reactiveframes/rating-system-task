@@ -1,6 +1,6 @@
 import test from 'ava';
-let {appDetails} = require('../../baseUnitTest');
-let Gold = require('./../../../lib/rankings/customer_types/gold');
+const {appDetails} = require('../../baseUnitTest');
+const Gold = require('./../../../lib/rankings/customer_types/gold');
 
 
 

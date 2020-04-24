@@ -1,9 +1,9 @@
 import test from 'ava';
 
-let {appDetails,getAppsDetailsLength} = require('../../baseUnitTest');
-let _ = require('lodash');
+const {appDetails,getAppsDetailsLength} = require('../../baseUnitTest');
+const _ = require('lodash');
 
-let Bronze = require('./../../../lib/rankings/customer_types/bronze');
+const Bronze = require('./../../../lib/rankings/customer_types/bronze');
 
 
 test("bronze: unit testing getUniqueRandomNumbers", async t => {

@@ -1,8 +1,6 @@
 import test from 'ava';
-
-let {getAppsDetailsLength} = require('../../baseUnitTest');
-
-let Silver = require('./../../../lib/rankings/customer_types/silver');
+const {getAppsDetailsLength} = require('../../baseUnitTest');
+const Silver = require('./../../../lib/rankings/customer_types/silver');
 
 
 test("silver: unit testing getRandomNumberFromApi", async t => {
@@ -22,6 +20,9 @@ test("silver: unit testing getRandomNumberFromApi", async t => {
     await Promise.all(randomApiPromises)
         .then(()=>{
             t.assert(distinctRandomNumbers.size === getAppsDetailsLength());
+        })
+        .catch(err =>{
+            console.error(err);
         })
 
 });
