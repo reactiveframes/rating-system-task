@@ -20,7 +20,6 @@ app.use('/', routes);
 
 
 /**
- * Phase 1 of the server's lifecycle.
  * on server start, load the data to in-memory:
  *  - save (m) reads from (n) requests
  *  - when scaling out, every new instance will get updated first before serving (& will communicate with redis channels / kafka - not implement)
