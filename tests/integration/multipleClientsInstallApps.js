@@ -43,7 +43,7 @@ let clientsInstallations = [
 
 
 let relevantAppRequest = {
-    age: 28,
+    age: 26,
     category: "social",
     customerType: "gold"
 };

@@ -6,9 +6,10 @@ const createError = require('http-errors'),
     routes = require('./lib/routes'),
     bodyParser = require('body-parser'),
     redis = require(`./lib/orm/redis`),
+    //a dedicated integration test is @ tests/integration/multipleClientsInstallApps.js
     app = express();
 
-console.log("Server started, listening on port: "+process.env.PORT);
+console.log("Server started, listening on port: " + process.env.PORT);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -25,7 +26,7 @@ app.use('/', routes);
  *  - when scaling out, every new instance will get updated first before serving (& will communicate with redis channels / kafka - not implement)
  */
 redis.init().then()
-    .catch(err =>{
+    .catch(err => {
         console.error(err);
     });
 
@@ -40,20 +41,10 @@ app.use(function (err, req, res, next) {
     console.log(err);
 });
 
-// // error handler
-// app.use(function (err, req, res, next) {
-//     // set locals, only providing error in development
-//     res.locals.message = err.message;
-//     res.locals.error = req.app.get('env') === 'development' ? err : {};
-//
-//     // render the error page
-//     res.status(err.status || 500);
-//     res.render('error');
-// });
 
-process.on('uncaughtException', function(err) {
-    console.log( " UNCAUGHT EXCEPTION " );
-    console.log( "[Inside 'uncaughtException' event] " + err.stack || err.message );
+process.on('uncaughtException', function (err) {
+    console.log(" UNCAUGHT EXCEPTION ");
+    console.log("[Inside 'uncaughtException' event] " + err.stack || err.message);
 });
 
 

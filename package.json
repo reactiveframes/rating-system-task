@@ -1,16 +1,16 @@
 {
-  "name": "init",
+  "name": "mock",
   "version": "1.0.0",
-  "description": "A mock ranking service that imitates the lifecycle of mobile application installs",
+  "description": "A mock rating system that imitates the lifecycle of mobile application installs",
   "private": true,
   "author": "Ben Mark",
   "bugs": {
-    "url": "https://github.com/ben-mark/mock-ranking-service/issues"
+    "url": "https://github.com/reactiveframes/rating-system-task/issues"
   },
-  "homepage": "https://github.com/ben-mark/mock-ranking-service#readme",
+  "homepage": "https://github.com/reactiveframes/rating-system-task#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atheodosiou/nodejs-redis-cache-example.git"
+    "url": "https://github.com/reactiveframes/rating-system-task.git"
   },
   "scripts": {
     "start": "node bin/www",
