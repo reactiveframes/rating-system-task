@@ -58,7 +58,7 @@ or from terminal
     - integration test
 
 # Usage
-After running the server, you can send/test requests by either clicking on the following links or via postman for example:
+Once server is started, you can send/test requests by either clicking on the following links or via postman for example:
 
 - GET
     - http://127.0.0.1:3000/appService/relevantApplication?age=29&category=social&customerType=bronze
@@ -69,7 +69,7 @@ After running the server, you can send/test requests by either clicking on the f
     - http://127.0.0.1:3000/appService/installedApps?installedApp=facebook&age=33
 
 
-Also running the full test coverage concurrently by:
+Or by running the full test coverage concurrently by:
 ```
 npm run test
 ```
