@@ -57,6 +57,17 @@ or from terminal
     - api tests
     - integration test
 
+# Usage
+sending requests via postman for example:
+
+- GET
+    - http://127.0.0.1:3000/appService/relevantApplication?age=29&category=social&customerType=bronze
+    - http://127.0.0.1:3000/appService/relevantApplication?age=30&category=social&customerType=silver
+    - http://127.0.0.1:3000/appService/relevantApplication?age=35&category=social&customerType=gold
+  
+- POST (with no payload)
+    - http://127.0.0.1:3000/appService/installedApps?installedApp=facebook&age=33
+
 # Server lifecycle
 
 - initializes the redis cache with the structured data, stored in lib/init_data
