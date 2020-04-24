@@ -22,7 +22,7 @@ e.g.
 on the example above we can see that 20 customers by the age of 5 (the index) have installed facebook and the average age is 5.
 
 
-The customer types are structured in a js file per type, in the ranking/customer_types dir
+The customer types are structured in a js file per type convention, in the ranking/customer_types dir, where lib/ranking/index.js loads them all on server start. 
 on server start , all prototypes in that dir are loaded into a customerTypes object
 making it very easy to add extra featured customer types.
 
@@ -69,7 +69,7 @@ sending requests via postman for example:
     - http://127.0.0.1:3000/appService/installedApps?installedApp=facebook&age=33
 
 # Server lifecycle
-
+- loads all existing customer types modules from /lib/ranking/customer_type implicitly from customer_types index.js
 - initializes the redis cache with the structured data, stored in lib/init_data
 - on any api request (e.g. Once a client sends an installedApp request), update redis and the in-memory cache to respond faster to the api request and to eliminate n (requests) redis reads.
 - serves all existing endpoints.
