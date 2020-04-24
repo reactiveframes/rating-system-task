@@ -22,11 +22,11 @@ e.g.
 on the example above we can see that 20 customers by the age of 5 (the index) have installed facebook and the average age is 5.
 
 
-The customer types are structured in a js file per type convention, in the ranking/customer_types dir, where lib/ranking/index.js loads them all on server start. 
-on server start , all prototypes in that dir are loaded into a customerTypes object
+The customer types are structured in a js file per type (convention), in the ranking/customer_types dir, where lib/ranking/index.js loads them all (on runtime) when the server starts. 
+on server start , all prototypes in that dir are available by requiring customer_types dir
 making it very easy to add extra featured customer types.
 
-The data is also stored in memory as well as in redis for faster responses and to cut down the read requests from redis
+The data is also stored in a global cache object named appDetails (stored as well in redis) for faster responses and to cut down the read requests from redis or any other database.
 
 
 # Adding a new customer type
