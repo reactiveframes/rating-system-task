@@ -8,9 +8,9 @@ const Bronze = require('./../../../lib/rankings/customer_types/bronze');
 
 test("bronze: unit testing getUniqueRandomNumbers", async t => {
 
-    let bronze = Object.create(Bronze.prototype);
+    const bronze = Object.create(Bronze.prototype);
 
-    let distinctRandomNumbers =  new Set();
+    const distinctRandomNumbers =  new Set();
 
     _.times(100, (i) => {
         let randomResultArr = Array.from(bronze.getUniqueRandomNumbers());

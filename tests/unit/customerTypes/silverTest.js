@@ -4,11 +4,11 @@ const Silver = require('./../../../lib/rankings/customer_types/silver');
 
 
 test("silver: unit testing getRandomNumberFromApi", async t => {
-    let silver = Object.create(Silver.prototype);
+    const silver = Object.create(Silver.prototype);
 
-    let distinctRandomNumbers =  new Set();
+    const distinctRandomNumbers =  new Set();
 
-    let randomApiPromises = [...Array(50)].map(async () => {
+    const randomApiPromises = [...Array(50)].map(async () => {
         return new Promise(async (resolve, reject) => {
             let randomNum = await silver.getRandomNumberFromApi();
             distinctRandomNumbers.add(randomNum);

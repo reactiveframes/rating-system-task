@@ -1,9 +1,8 @@
 import test from 'ava';
 const {timeout,appDetails,app} = require('../baseApiTest');
-
-
 const chai = require('chai');
 const chaiHttp = require("chai-http");
+
 chai.use(chaiHttp);
 
 
