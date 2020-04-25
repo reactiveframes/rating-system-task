@@ -1,9 +1,6 @@
 import test from 'ava';
-const {timeout,appDetails,app} = require('../baseApiTest');
-const chai = require('chai');
-const chaiHttp = require("chai-http");
+const {chai,orm,timeout,app} = require('../baseApiTest');
 
-chai.use(chaiHttp);
 
 test("endpoint: appService/relevantApplication with category bronze", async t => {
     t.timeout(timeout);
@@ -80,6 +77,6 @@ function assertBusinessLogic(res, t) {
     t.assert(appArr.length === parseInt(process.env.NUM_OF_RETURNED_APPS));
     t.assert(appArr[0] !== appArr[1]);
     appArr.forEach(appName => {
-        t.assert(appDetails[appName] && appDetails[appName] !== '')
+        t.assert(orm.appDetails[appName] && orm.appDetails[appName] !== '')
     })
 }
