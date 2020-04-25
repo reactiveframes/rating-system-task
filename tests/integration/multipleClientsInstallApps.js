@@ -64,7 +64,6 @@ test("integration: multiple clients install apps and get different ratings via 2
             const appsResult = res.body;
             console.log("integration result: " + appsResult);
 
-            printAllAverages();
             //verify initialized average ages
             t.assert(getAppAvgAge("facebook") === 27);
             t.assert(getAppAvgAge("whatsup") === 19);
