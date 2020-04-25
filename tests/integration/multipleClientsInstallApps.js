@@ -68,7 +68,7 @@ test("integration: multiple clients install apps and get different ratings via 2
             //verify initialized average ages
             t.assert(getAppAvgAge("facebook") === 27);
             t.assert(getAppAvgAge("whatsup") === 19);
-            //verify that instagram's avg age has been changed from 14 to 21 after 100 users installed it
+            //verify that instagram's avg age has been changed from 14 to 20 after 100 users installed it
             t.assert(getAppAvgAge("instagram") === 20);
             //wont be selected because we're asking for category social..
             t.assert(getAppAvgAge("spotify") === 32);
