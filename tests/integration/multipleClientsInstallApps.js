@@ -11,7 +11,7 @@ const relevantAppRequest = {
 
 /**
  * This test demonstrates the rating system by raising up the frequency of facebook,  whatsup and instagram's installations
- * Once a user requests to get a relevant app by his age  & category , of course using the customerType=gold
+ * Once a user requests a relevant app by his age  & category , of course using the customerType=gold
  * he is supposed to get the up to date closest age average app in that moment in time.
  */
 test("integration: multiple clients install apps and get different ratings via 2 getRelevant cycles and hundreds installations in between", async t => {
