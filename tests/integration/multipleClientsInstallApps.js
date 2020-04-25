@@ -53,7 +53,7 @@ test("integration: multiple clients install apps and get different ratings via 2
             t.assert(getAppAvgAge("facebook") === 27);
 
         })
-        //install 150 instagram apps so the instagram average age will be 20  >  whatsup avg age = 19
+        //install 120 instagram apps by (26 year olds) so the instagram average age will be 20  >  whatsup avg age = 19
         .then(() => convertToInstalledAppRequests(generateInstalledAppRequestsParams(26, "instagram", 120), requester))
         .then(installedAppReqs => Promise.all(installedAppReqs))
         .then(() => printAllAverages())
